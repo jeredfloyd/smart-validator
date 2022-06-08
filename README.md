@@ -3,7 +3,7 @@
 This is a quickly hacked-together [SMART Health Card
 Verifier](https://smarthealth.cards/en/), implemented for Firefly Arts
 Collective's 2022 gathering.  It's not directly re-usable without
-changing the back-end interacts with the database, but I'd like to
+changing how the back-end interacts with the database, but I'd like to
 preserve it in a repo and perhaps it can serve as a warning to
 others...
 
@@ -49,11 +49,11 @@ Input JSON fields:
 
 Output fields:
 - **status**:
--- "verified" - All checks passed and the user has been marked as
+  - "verified" - All checks passed and the user has been marked as
    verified in the database
--- "name-mismatch" - The card is valid and DOB match but name did not
+  - "name-mismatch" - The card is valid and DOB match but name did not
    match the database exactly
--- "failed"   - Some aspect of verification failed
+  - "failed"   - Some aspect of verification failed
 - **message**: an informational message suitable for display
 
 Pretty much everything is hardcoded in this application and it's
