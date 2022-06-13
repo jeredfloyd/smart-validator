@@ -189,7 +189,10 @@ function processCard(uid, vrec, callback) {
 	    if (patientName.length > 0) {
 		patientName += ' ';
 	    }
-	    patientName += patientResource.name?.[0]?.family;
+	    var patientFamilyNameParts = patientResource.name?.[0]?.family.split(' ');
+	    if (patientFamilyNameParts.length > 0) {
+		patientName += patientFamilyNameParts[patientFamilyNameParts.length - 1];
+	    }
 	    var fullNameParts = results[0].fullname.split(' ');
 	    var fullname = fullNameParts[0];
 	    if (fullNameParts.length > 1) {
